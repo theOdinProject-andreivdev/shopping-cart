@@ -33,8 +33,6 @@ function ShoppingCard() {
   let [cartItems, setCartItems] = useState([]);
 
   const addToCart = (name) => {
-    console.log(name);
-    console.log(cartItems);
     items.forEach((element) => {
       if (element.name === name) {
         setCartItems(cartItems.concat(element));
@@ -45,7 +43,7 @@ function ShoppingCard() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-10">
+        <div className="col">
           <div className="container">
             <div className="row">
               {items.map((item) => (
@@ -59,10 +57,12 @@ function ShoppingCard() {
             </div>{" "}
           </div>
         </div>
-        <div class="card col-2" style={{ width: "18rem" }}>
+        <div class="card col-md-auto" style={{ width: "18rem" }}>
           <div class="card-header">
             Cart
-            <ul class="list-group list-group-flush">
+            <br />
+            <br />
+            <ul class="list-group">
               {cartItems.map((item) => (
                 <li className="list-group-item">{item.name}</li>
               ))}
